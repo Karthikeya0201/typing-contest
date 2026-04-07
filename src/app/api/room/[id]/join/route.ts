@@ -3,7 +3,7 @@ import { rooms, serializeRoom, Player } from '@/lib/store';
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
   const { name } = await req.json();

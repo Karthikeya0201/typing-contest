@@ -3,7 +3,7 @@ import { rooms } from '@/lib/store';
 
 export async function POST(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
   const { playerId, wpm, accuracy, progress, status } = await req.json();
